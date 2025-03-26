@@ -5,8 +5,8 @@
 package com.mycompany.librarymanagementsystem;
 
 import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 /**
  *
  * @author francescosciabbarrasi
@@ -35,6 +35,17 @@ public class BookManager implements BookOperations {
     
     @Override
     public void addBook (Book book) {
-    throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO Books (ID, title, author, genre, availability) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement pstmt = db.prepareStatement(sql)) {
+            pstmt.setInt(1, book.getId());
+            pstmt.setString(2, book.getTitle());
+            pstmt.setString(3, book.getAuthor());
+            pstmt.setString(4, book.getGenre());
+            pstmt.setBoolean(5, book.isAvailable());
+            pstmt.executeUpdate();
+            System.out.println("Book added: " + book.getTitle());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

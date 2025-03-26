@@ -30,7 +30,7 @@ public class LibraryManagementSystem {
                     String title = scanner.nextLine();
                     String author = scanner.nextLine();
                     String genre = scanner.nextLine();
-                    Book bookTest = new Book(0, title, author, genre, true);
+                    Book bookTest = new Book(0123456710, title, author, genre, true);
                     bookManager.addBook(bookTest);
             }
         }
