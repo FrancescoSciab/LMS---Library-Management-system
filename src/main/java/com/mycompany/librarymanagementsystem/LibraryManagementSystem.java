@@ -13,5 +13,6 @@ public class LibraryManagementSystem {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         DatabaseConnection dbConnection = DatabaseConnection.getInstance();
+        BookManager bookManager = new BookManager();
     }
 }
