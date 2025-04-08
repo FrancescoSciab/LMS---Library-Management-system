@@ -5,6 +5,7 @@
 package com.mycompany.librarymanagementsystem.manager;
 import com.mycompany.librarymanagementsystem.db.DatabaseConnection;
 import com.mycompany.librarymanagementsystem.model.User;
+import com.mycompany.librarymanagementsystem.factory.UserFactory;
 import com.mycompany.librarymanagementsystem.UserOperations;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -71,13 +72,7 @@ public class UserManager implements UserOperations {
             pstmt.setInt(1, userId);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                return new User(
-                    rs.getInt("id"),
-                    rs.getString("name"),
-                    rs.getString("role"),
-                    rs.getString("email"),
-                    rs.getString("password")
-                );
+                return UserFactory.createUser(rs.getInt("id"), rs.getString("name"), rs.getString("role"), rs.getString("email"), rs.getString("password"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

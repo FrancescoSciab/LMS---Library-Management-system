@@ -57,8 +57,13 @@ public class LibraryManagementSystem {
                     String newName = scanner.nextLine();
                     String newEmail = scanner.nextLine();
                     String newPassword = scanner.nextLine();
-                    User updatedUser = new User(id, newName, "Member", newEmail, newPassword); // Role unchanged for simplicity
-                    userManager.updateUser(updatedUser);
+                    User existingUser = userManager.findUser(id);
+                    if (existingUser != null) {
+                        User updatedUser = UserFactory.createUser(id, newName, existingUser.getRole(), newEmail, newPassword);
+                        userManager.updateUser(updatedUser);
+                    } else {
+                        System.out.println("User not found.");
+                    }
                     break;
                 case 4: // Delete User
                     System.out.println("Enter user ID:");

@@ -8,7 +8,7 @@ package com.mycompany.librarymanagementsystem.model;
  *
  * @author francescosciabbarrasi
  */
-public class User {
+public abstract class User {
     private int id;
     private String name;
     private String role; // e.g., "admin", "Member"
