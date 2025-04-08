@@ -4,6 +4,8 @@
  */
 package com.mycompany.librarymanagementsystem;
 
+import com.mycompany.librarymanagementsystem.model.User;
+
 /**
  *
  * @author francescosciabbarrasi

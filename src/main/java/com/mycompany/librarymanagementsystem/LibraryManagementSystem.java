@@ -4,6 +4,12 @@
 
 package com.mycompany.librarymanagementsystem;
 
+import com.mycompany.librarymanagementsystem.db.DatabaseConnection;
+import com.mycompany.librarymanagementsystem.model.Book;
+import com.mycompany.librarymanagementsystem.model.User;
+import com.mycompany.librarymanagementsystem.factory.UserFactory;
+import com.mycompany.librarymanagementsystem.manager.BookManager;
+import com.mycompany.librarymanagementsystem.manager.UserManager;
 import java.util.Scanner;
 
 /**
