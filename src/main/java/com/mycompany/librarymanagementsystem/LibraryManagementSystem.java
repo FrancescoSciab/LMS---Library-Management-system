@@ -10,6 +10,7 @@ import com.mycompany.librarymanagementsystem.model.User;
 import com.mycompany.librarymanagementsystem.factory.UserFactory;
 import com.mycompany.librarymanagementsystem.manager.BookManager;
 import com.mycompany.librarymanagementsystem.manager.UserManager;
+import com.mycompany.librarymanagementsystem.manager.TransactionManager;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,7 @@ public class LibraryManagementSystem {
         DatabaseConnection dbConnection = DatabaseConnection.getInstance();
         BookManager bookManager = new BookManager();
         UserManager userManager = new UserManager();
+        TransactionManager transactionManager = new TransactionManager();
         
         while (true) {
             System.out.println("1 = Test book, 2 = Add user, 3 = update user, 4 = Delete user, 5 = Find user");
@@ -80,6 +82,11 @@ public class LibraryManagementSystem {
                         System.out.println("User not found.");
                     }
                     break;
+                case 6: //issue book
+                    System.out.println("Enter your user ID and book ID:");
+                    int userId = scanner.nextInt();
+                    int bookId = scanner.nextInt();
+                    transactionManager.issueBook(userId, bookId);
                 default:
                     System.out.println("Invalid option!");
             }
