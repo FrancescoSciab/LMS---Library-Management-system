@@ -12,4 +12,7 @@ public class AdminUser extends User {
     public AdminUser(int id, String name, String email, String password) {
         super(id, name, "Admin", email, password);
     }
+    public void manageSystem() {
+        System.out.println("Admin managing the system.");
+    }
 }

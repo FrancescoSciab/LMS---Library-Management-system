@@ -12,4 +12,8 @@ public class MemberUser extends User {
     public MemberUser(int id, String name, String email, String password) {
         super(id, name, "Member", email, password);
     }
+    
+    public void borrowBook() {
+        System.out.println("Member borrowing a book.");
+    }
 }
