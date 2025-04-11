@@ -22,6 +22,11 @@ public abstract class User {
         this.email = email;
         this.password = password;
     }
+    
+    // Notification method
+    public void receiveNotification(String message) {
+        System.out.println("Notification for " + name + " (" + email + "): " + message);
+    }
 
     public void setName(String name) {
         this.name = name;

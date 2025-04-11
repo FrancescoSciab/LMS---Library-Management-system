@@ -12,6 +12,7 @@ import com.mycompany.librarymanagementsystem.manager.BookManager;
 import com.mycompany.librarymanagementsystem.manager.UserManager;
 import com.mycompany.librarymanagementsystem.manager.TransactionManager;
 import com.mycompany.librarymanagementsystem.model.Transaction;
+import com.mycompany.librarymanagementsystem.service.NotificationService;
 import java.util.Scanner;
 import java.util.List;
 /**
@@ -27,6 +28,7 @@ public class LibraryManagementSystem {
         BookManager bookManager = new BookManager();
         UserManager userManager = new UserManager();
         TransactionManager transactionManager = new TransactionManager();
+        NotificationService notificationService = new NotificationService();
         
         while (true) {
             System.out.println("1 = Admin Panel\n2 = Member Panel\n3 = Notifications\n-1 = Exit");
@@ -138,8 +140,9 @@ public class LibraryManagementSystem {
                         }
                     }
                     break;
-                case 3:
-                    System.out.println("Notifications: Check due dates (TODO)");
+                case 3:// Notifications
+                    System.out.println("Checking due books...");
+                    notificationService.checkDueBooks();
                     break;
                 default:
                     System.out.println("Invalid option!");
