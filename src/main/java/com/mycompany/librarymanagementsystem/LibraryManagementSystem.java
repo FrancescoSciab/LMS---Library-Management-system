@@ -41,13 +41,49 @@ public class LibraryManagementSystem {
                     char adminChoice = scanner.next().charAt(0);
                     scanner.nextLine();
                     if (adminChoice == 'a') {
-                        System.out.println("Enter book title, author, genre:");
-                        
-                        String title = scanner.nextLine();
-                        String author = scanner.nextLine();
-                        String genre = scanner.nextLine();
-                        Book book = new Book(0, title, author, genre, true);
-                        bookManager.addBook(book);
+                        System.out.println("1 = Add Book, 2 = Update Book, 3 = Delete Book, 4 = Find Book");
+                        int userChoice = scanner.nextInt();
+                        switch (userChoice) {
+                            case 1: // Add Book
+                                System.out.println("Enter book title, author, genre:");
+                                scanner.nextLine();
+                                String title = scanner.nextLine();
+                                String author = scanner.nextLine();
+                                String genre = scanner.nextLine();
+                                Book book = new Book(0, title, author, genre, true);
+                                bookManager.addBook(book);
+                                break;
+                            case 2: // Update Book
+                                System.out.println("Enter book ID, new book title, new book author name, new genre:");
+                                int id = scanner.nextInt();
+                                scanner.nextLine();
+                                String newTitle = scanner.nextLine();
+                                String newAuthor = scanner.nextLine();
+                                String newGenre = scanner.nextLine();
+                                Book existingBook = bookManager.findBook(id);
+                                if (existingBook != null) {
+                                    Book updatedBoook = new Book(id, newTitle, newAuthor, newGenre, true);
+                                    bookManager.updateBook(updatedBoook);
+                                } else {
+                                    System.out.println("User not found.");
+                                }
+                                break;
+                            case 3: // Delete Book
+                                System.out.println("Enter book ID:");
+                                int deleteId = scanner.nextInt();
+                                bookManager.deleteBook(deleteId);
+                                break;
+                            case 4: // Find Book
+                                System.out.println("Enter book ID:");
+                                int findId = scanner.nextInt();
+                                Book foundBook = bookManager.findBook(findId);
+                                if (foundBook != null) {
+                                    System.out.println("Found: " + foundBook.getTitle());
+                                } else {
+                                    System.out.println("Book not found.");
+                                }
+                                break;
+                        }
                     } else if (adminChoice == 'b') {
                         System.out.println("1 = Add User, 2 = Update User, 3 = Delete User, 4 = Find User");
                         int userChoice = scanner.nextInt();

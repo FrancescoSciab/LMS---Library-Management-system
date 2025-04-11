@@ -40,7 +40,7 @@ public class BookManager implements BookOperations {
 
     @Override
     public void deleteBook(int bookId) {
-        String sql = "DELETE FROM Books WHERE id = ?";
+        String sql = "DELETE FROM Books WHERE ID = ?";
                 try (PreparedStatement pstmt = db.prepareStatement(sql)) {
                     pstmt.setInt(1, bookId);
                     pstmt.executeUpdate();
