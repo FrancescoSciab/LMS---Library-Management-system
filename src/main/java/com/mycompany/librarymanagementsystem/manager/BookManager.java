@@ -24,7 +24,7 @@ public class BookManager implements BookOperations {
 
     @Override
     public void updateBook(Book book) {
-        String sql = "UPDATE Books SET title = ?, author = ?, genre = ?, available = ? WHERE id = ?";
+        String sql = "UPDATE Books SET title = ?, author = ?, genre = ?, availability = ? WHERE id = ?";
                 try (PreparedStatement pstmt = db.prepareStatement(sql)) {
                     pstmt.setString(1, book.getTitle());
                     pstmt.setString(2, book.getAuthor());

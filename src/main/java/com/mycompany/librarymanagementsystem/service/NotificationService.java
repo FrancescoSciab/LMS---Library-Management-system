@@ -33,6 +33,7 @@ public class NotificationService {
     public void checkDueBooks() {
         LocalDate today = LocalDate.now();
         int dueDays = 14; // Books are due after 14 days
+        boolean hasNotifications = false; // Flag to track notifications
 
         String sql = """
             SELECT t.transactionId, t.bookId, t.userId, t.issueDate, u.name, u.role, u.email, u.password
@@ -60,14 +61,19 @@ public class NotificationService {
                     rs.getString("password")
                 );
 
-                // Notify based on due status
+                // Notify based on due status and availability
                 if (today.isAfter(dueDate)) {
                     String message = "Book ID " + rs.getInt("bookId") + " is overdue! Due date was " + dueDate;
                     user.receiveNotification(message);
+                    hasNotifications = true;
                 } else if (today.equals(dueDate)) {
                     String message = "Book ID " + rs.getInt("bookId") + " is due today!";
                     user.receiveNotification(message);
-                }
+                    hasNotifications = true;
+                } 
+            }
+            if (!hasNotifications) {
+                System.out.println("No books are due or overdue.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
