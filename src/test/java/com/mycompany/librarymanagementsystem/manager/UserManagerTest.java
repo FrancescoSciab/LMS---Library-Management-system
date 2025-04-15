@@ -40,19 +40,6 @@ public class UserManagerTest {
         userManager.addUser(instance);
     }
 
-//    /**
-//     * Test of updateUser method, of class UserManager.
-//     */
-//    @Test
-//    public void testUpdateUser() {
-//        System.out.println("updateUser");
-//        User user = null;
-//        UserManager instance = new UserManager();
-//        instance.updateUser(user);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-
     /**
      * Test of deleteUser method, of class UserManager.
      */
@@ -64,20 +51,5 @@ public class UserManagerTest {
         instance.deleteUser(userId);
         
     }
-
-//    /**
-//     * Test of findUser method, of class UserManager.
-//     */
-//    @Test
-//    public void testFindUser() {
-//        System.out.println("findUser");
-//        int userId = 0;
-//        UserManager instance = new UserManager();
-//        User expResult = null;
-//        User result = instance.findUser(userId);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
     
 }

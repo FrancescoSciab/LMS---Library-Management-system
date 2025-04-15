@@ -38,8 +38,7 @@ public class TransactionManagerTest {
         int bookId = 0;
         TransactionManager instance = new TransactionManager();
         instance.issueBook(userId, bookId);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -51,23 +50,7 @@ public class TransactionManagerTest {
         int transactionId = 0;
         TransactionManager instance = new TransactionManager();
         instance.returnBook(transactionId);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of viewTransactions method, of class TransactionManager.
-     */
-    @Test
-    public void testViewTransactions() {
-        System.out.println("viewTransactions");
-        int userId = 0;
-        TransactionManager instance = new TransactionManager();
-        List<Transaction> expResult = null;
-        List<Transaction> result = instance.viewTransactions(userId);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }

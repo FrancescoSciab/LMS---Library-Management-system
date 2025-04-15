@@ -36,34 +36,7 @@ public class BookManagerTest {
     @org.junit.jupiter.api.AfterEach
     public void tearDown() throws Exception {
     }
-    
-//    @BeforeAll
-//    public static void setUpClass() {
-//    }
-//    
-//    @AfterAll
-//    public static void tearDownClass() {
-//    }
-//    
-//    @BeforeEach
-//    public void setUp() {
-//    }
-//    
-//    @AfterEach
-//    public void tearDown() {
-//    }
 
-    /**
-     * Test of updateBook method, of class BookManager.
-     */
-//    @org.junit.jupiter.api.Test
-//    public void testUpdateBook() {
-//        System.out.println("updateBook");
-//        Book book = null;
-//        BookManager instance = new BookManager();
-//        instance.updateBook(book);
-//        
-//    }
 
     /**
      * Test of deleteBook method, of class BookManager.
@@ -76,20 +49,6 @@ public class BookManagerTest {
         instance.deleteBook(bookId);
        
     }
-
-//    /**
-//     * Test of findBook method, of class BookManager.
-//     */
-//    @org.junit.jupiter.api.Test
-//    public void testFindBook() {
-//        System.out.println("findBook");
-//        int bookId = 0;
-//        BookManager instance = new BookManager();
-//        Book expResult = null;
-//        Book result = instance.findBook(bookId);
-//        assertEquals(expResult, result);
-//        
-//    }
 
     /**
      * Test of addBook method, of class BookManager.
